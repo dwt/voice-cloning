@@ -347,9 +347,10 @@ def main(
     )
 
 
-if __name__ == "__main__":
-    app = typer.Typer(add_completion=False, pretty_exceptions_enable=False)
-    app.command()(main)
-    app()
+# Typer app at module level for entry point support (pyproject.toml: q3-tts = "q3_tts:app")
+# This script can be run directly (./q3_tts.py) or installed (uv sync && uv run q3-tts)
+app = typer.Typer(add_completion=False, pretty_exceptions_enable=False)
+app.command()(main)
 
-    # typer.run(main)
+if __name__ == "__main__":
+    app()
