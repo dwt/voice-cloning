@@ -11,6 +11,8 @@
 #     "scipy",
 # ]
 # ///
+#
+# Uses https://qwen3-tts.com to locally generate emotional shaped speech or clone a voice from 3-4 seconds of audio.
 import subprocess
 import sys
 import tempfile
